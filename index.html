@@ -226,6 +226,34 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 text-center">
+                    <label class="text-center" style="font-size:3em;">萌萌們的真相</label>
+                </div>
+            </div>
+            
+            <div class="row text-center">
+                <div class="col-xs-12 col-md-4 marDiv">
+                    <a href="img/infoPics/1.jpg" data-toggle="lightbox">
+                        <img src="img/infoPic2/1.jpg" class="img-responsive" style="max-width: 100%;">
+                    </a>
+                </div>
+                <div class="col-xs-12 col-md-4 marDiv">
+                    <a href="img/infoPics/2.jpg" data-toggle="lightbox">
+                        <img src="img/infoPic2/2.jpg" class="img-responsive" style="max-width: 100%;">
+                    </a>
+                </div>
+                <div class="col-xs-12 col-md-4 marDiv">
+                    <a href="img/infoPics/3.jpg" data-toggle="lightbox">
+                        <img src="img/infoPic2/3.jpg" class="img-responsive" style="max-width: 100%;">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 text-center">
                     <label class="text-center" style="font-size:2em;">一起分享來闢謠</label>
                 </div>
             </div>
@@ -239,8 +267,7 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
         </div>
     </section>
 
-    <section id="features" class="features">
-        
+    <section id="comments" class="comments bg-primary2 text-center">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 text-center">
@@ -262,6 +289,8 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
             </div>
         </div>
     </section>
+
+    
 
     <footer>
         <div class="container">
@@ -292,7 +321,6 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
 
             $.get( "http://graph.facebook.com/v2.8/?fields=share&id=" + encodeURI("http://lovewin.com.tw"), function( data ) {
                 $('#share_count').html(data.share.share_count);
-                console.log(data.share.share_count);
             } , "json")
             
             
