@@ -125,7 +125,7 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
                         <img src="img/infoPics/1.jpg" class="img-responsive" style="max-width: 100%;">
                     </a>
                 </div>
-                <div class="col-xs-12 col-md-4 marDiv>
+                <div class="col-xs-12 col-md-4 marDiv">
                     <a href="img/infoPics/2.jpg" data-toggle="lightbox">
                         <img src="img/infoPics/2.jpg" class="img-responsive" style="max-width: 100%;">
                     </a>
@@ -245,6 +245,23 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
         </div>
     </section>
 
+    <section id="features" class="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <label class="text-center" style="font-size:2em;">一起分享來闢謠</label>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-xs-12 col-md-offset-3 col-md-3 text-center" style="font-size:2em;">已經有</br><label id="share_count"></label>個</br>同性戀的好朋友</br>分享資訊</div>
+                <div class="col-xs-12 col-md-3 text-center">
+                    <a class="fb-xfbml-parse-ignore" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=lovewin.com.tw"><span style="font-size: 4em;color: #3b5998;"><i class="fa fa-share" aria-hidden="true"></i></br>分享</span></a>
+                </div>
+            </div>    
+        </div>
+    </section>
+
     <footer>
         <div class="container">
             <p>&copy; 2016 Otters Media.</p>
@@ -271,6 +288,11 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
             $( "#slogan1" ).fadeIn("slow");
             $( "#slogan2" ).fadeIn("slow");
             $( "#headPic" ).fadeIn(5000);
+
+            $.get( "http://graph.facebook.com/v2.8/?fields=share&id=" + encodeURI("http://lovewin.com.tw"), function( data ) {
+                $('#share_count').html(data.share.share_count);
+                console.log(data.share.share_count);
+            } , "json")
             
             
             // delegate calls to data-toggle="lightbox"
