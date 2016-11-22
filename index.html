@@ -57,10 +57,10 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
                     <div class="header-content">
                         <div class="header-content-inner">
                             <div class="row text-center">
-                                <div class="col-xs-12 col-md-6">
+                                <div class="col-xs-12 col-md-6" id="slogan1" style="display:none;">
                                     <p style="color:#000;font-size:2em;">讓成家從想像</p>
                                 </div>
-                                <div class="col-xs-12 col-md-6">
+                                <div class="col-xs-12 col-md-6" id="slogan2" style="display:none;">
                                     <p style="color:#000;font-size:2em;">變&nbsp;&nbsp;&nbsp;成&nbsp;&nbsp;&nbsp;選&nbsp;&nbsp;&nbsp;項</p>
                                 </div>
                             </div>
@@ -70,7 +70,7 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-xs-12">
+                                <div class="col-xs-12" id="headPic" style="display:none;">
                                     <img src="img/head_pic.png" style="max-width:100%">    
                                 </div>
                             </div>
@@ -268,6 +268,11 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
     <script type="text/javascript">
         $(document).ready(function ($) {
 
+            $( "#slogan1" ).fadeIn("slow");
+            $( "#slogan2" ).fadeIn("slow");
+            $( "#headPic" ).fadeIn(5000);
+            
+            
             // delegate calls to data-toggle="lightbox"
             $(document).delegate('*[data-toggle="lightbox"]:not([data-gallery="navigateTo"])', 'click', function(event) {
                 event.preventDefault();
@@ -318,9 +323,7 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
             });
 
         });
-    </script>
 
-    <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -328,6 +331,15 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
 
         ga('create', 'UA-87804117-1', 'auto');
         ga('send', 'pageview');
+
+        function sleep(milliseconds) {
+          var start = new Date().getTime();
+          for (var i = 0; i < 1e7; i++) {
+            if ((new Date().getTime() - start) > milliseconds){
+              break;
+            }
+          }
+        }
 
     </script>
 
