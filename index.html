@@ -444,11 +444,17 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
             var lang = window.navigator.userLanguage || window.navigator.language ;     
             var relang=lang.toLowerCase();
             switch (relang){
+                case "en-us":
+                    $('#P2').attr( "src", "img/1210/文字檔/02.png" );
+                    break;
                 case "en":
                     $('#P2').attr( "src", "img/1210/文字檔/02.png" );
                     break;
-                        
+                         
                 case "ja":
+                    $('#P2').attr( "src", "img/1210/文字檔/03.png" );
+                    break;
+                case "ja-jp":
                     $('#P2').attr( "src", "img/1210/文字檔/03.png" );
                     break;
 
